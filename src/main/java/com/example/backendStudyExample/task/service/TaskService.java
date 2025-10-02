@@ -3,6 +3,7 @@ package com.example.backendStudyExample.task.service;
 import com.example.backendStudyExample.global.exception.EntityNotFoundException;
 import com.example.backendStudyExample.task.domain.Task;
 import com.example.backendStudyExample.task.dto.NewTaskRequestDto;
+import com.example.backendStudyExample.task.dto.TaskUpdateRequestDto;
 import com.example.backendStudyExample.task.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,6 +38,18 @@ public class TaskService {
     @Transactional(readOnly = true)
     public List<Task> getTaskList() {
         return taskRepository.findAll();
+    }
+
+    @Transactional
+    public void updateTask(Long taskId, TaskUpdateRequestDto requestDto) {
+        Task foundTask = findTaskById(taskId);
+
+        foundTask.update(
+                requestDto.title(),
+                requestDto.description(),
+                requestDto.dueDate(),
+                requestDto.status()
+        );
     }
 
     @Transactional
