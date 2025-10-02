@@ -7,8 +7,9 @@ import java.time.LocalDateTime;
 
 public class TestEntityUtil {
 
-    public static Task makeTask() {
+    public static Task makeTaskWithId(Long id) {
         return new Task(
+                id,
                 "test title",
                 "test description",
                 LocalDateTime.now(),
@@ -16,12 +17,12 @@ public class TestEntityUtil {
         );
     }
 
-    public static Task makeTaskWithId(Long id) {
+    public static Task makeTaskWithIdAndTitle(Long id, String title) {
         return new Task(
                 id,
-                "test title",
+                title,
                 "test description",
-                LocalDateTime.now(),
+                LocalDateTime.of(2025, 10, 1, 10, 0, 0),
                 TaskStatus.TODO
         );
     }
