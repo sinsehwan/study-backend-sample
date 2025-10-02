@@ -7,10 +7,12 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
 public class Task {
 
     @Id
@@ -29,15 +31,32 @@ public class Task {
     TaskStatus status;
 
     public Task(
+            Long id,
             String title,
             String description,
             LocalDateTime dueDate,
             TaskStatus status
     ) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.status = status;
+    }
+
+    public Task(
+            String title,
+            String description,
+            LocalDateTime dueDate,
+            TaskStatus status
+    ) {
+        this(
+                null,
+                title,
+                description,
+                dueDate,
+                status
+        );
     }
 
     protected Task() {
