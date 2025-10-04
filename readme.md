@@ -10,7 +10,6 @@
 - priority
 - status (Enum)
 
-
 ## DB 연결 및 Gradle 설정
 
 ### 의존성 추가
@@ -80,4 +79,4 @@ DB 연결까지 정상적으로 완료되었습니다.
 만약 .env파일이 제대로 불러와지지 않는다면
 [참고](https://strnetwork.tistory.com/54)
 
-
+- 히히
