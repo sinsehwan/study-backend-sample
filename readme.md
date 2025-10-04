@@ -42,9 +42,9 @@ dependencies {
 > properties에 다음 정보를 추가합니다.
 ```properties
 # DB 접속정보
-spring.datasource.url={DATASOURCE_URL}
-spring.datasource.username={DATASOURCE_USERNAME}
-spring.datasource.password={DATASOURCE_PASSWORD}
+spring.datasource.url=${DATASOURCE_URL}
+spring.datasource.username=${DATASOURCE_USERNAME}
+spring.datasource.password=${DATASOURCE_PASSWORD}
 # DB 드라이버
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
